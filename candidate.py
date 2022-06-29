@@ -42,8 +42,7 @@ class ProbEcho(rpyc.Service):
             node.children.remove(sender_process_id)
             print(f'Current children: {node.children}.')
         except:
-            print(f'Failed to remove {sender_process_id} from children {node.children}.\n' +\
-                   'Aborting...')
+            print(f'Failed to remove {sender_process_id} from children {node.children}.')
 
     def exposed_probe(self, sender_process_id):
         global node
@@ -72,8 +71,7 @@ class ProbEcho(rpyc.Service):
                 print(node.adjacency)
             except:
                 print(f'ERROR: Failed to remove {node.father_process_id} ' +\
-                      f'from adjacency {node.adjacency}.\nAborting...')
-                exit()
+                      f'from adjacency {node.adjacency}.')
         # In this case, the election was started from the simulator,
         # so we'll update the node flags to reflect that.
         else:
